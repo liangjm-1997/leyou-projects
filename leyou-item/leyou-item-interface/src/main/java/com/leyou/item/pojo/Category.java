@@ -16,4 +16,7 @@ public class Category {
     private Long parentId;
     private Boolean isParent; // 注意isParent生成的getter和setter方法需要手动加上Is
     private Integer sort;
+
+
+    private String userid;
 }
