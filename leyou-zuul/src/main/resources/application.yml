@@ -1,5 +1,5 @@
 server:
-  port: 10010
+  port: 9090
 spring:
   application:
     name: leyou-zuul
@@ -7,7 +7,7 @@ eureka:
   client:
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://127.0.0.1:9010/eureka
   instance:
     prefer-ip-address: true
 zuul:

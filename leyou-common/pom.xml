@@ -8,9 +8,30 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.leyou.common</groupId>
     <artifactId>leyou-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>leyou-common-dao</module>
+        <module>leyou-common-api</module>
+        <module>leyou-common-core</module>
+    </modules>
 
 
+    <!--添加JPA依赖可以使用@Tanble注解-->
+    <dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-message6</artifactId>
+        </dependency>
+    </dependencies>
 </project>

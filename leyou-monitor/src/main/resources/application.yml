@@ -1,0 +1,35 @@
+server:
+  port: 9030
+spring:
+  application:
+    name: leyou-monitor
+  security:
+    user:
+      name: admin
+      password: admin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9010/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 5秒钟发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    prefer-ip-address: false #使用feign时候需要指定为false,否则注册到ribbon服务列表上显示机器名
+    health-check-url-path: /actuator/health
+    #注册的时候告诉eureka密码
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有的终端我们可以看到更多应用相关信息
+  endpoint:
+    health:
+      show-details: always #展示全部细节
+
+
+
+
+
